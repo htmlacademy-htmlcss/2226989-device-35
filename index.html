@@ -10,7 +10,7 @@
       <div class="logo">
         <img class="page-header-logo" alt="Логотип магазина Девайс." src="">
       </div>
-      <form class="search" searchaction="https://echo.htmlacademy.ru/" method="post">
+      <form class="search" action="https://echo.htmlacademy.ru/" method="post">
         <input type="text" name="search">
         <button class="search-button" type="submit">Найти</button>
       </form>
@@ -46,28 +46,69 @@
     <main class="main-index">
       <h1 class="visually-hidden">Интернет-магазин гаджетов "Девайс"</h1>
       <section class="gallery">
-        <h2 class="gallery-title visually-hidden">Примеры товаров</h2>
-         class<img class="slider-image" src="" alt="Примеры товаров." >
+        <h2 class="gallery-title visually-hidden">Промо товары</h2>
+         <img class="slider-image" src="" alt="Промо товары." >
         <button class="slider-button slider-prev" type="button">
                   <span class="visually-hidden">Предыдущее фото</span>
         </button>
         <button class="slider-button slider-next" type="button">
           <span class="visually-hidden">Следующее фото</span>
         </button>
-        <h3 class="example-title">Порхает как бабочка,
+        <ol class="promo-slider-cards">
+          <li class="promo-slider-item">
+        <h3 class="promo-title">Порхает как бабочка,
           жалит как пчела!</h3>
-            <p class="example-description">Этот обычный, на первый взгляд, квадрокоптер оснащен мощным лазером, замаскированным под стандартную камеру.
+            <p class="promo-description">Этот обычный, на первый взгляд, квадрокоптер оснащен мощным лазером, замаскированным под стандартную камеру.
             </p>
             <a class="button" href="#">ПОДРОБНЕЕ</a>
             <ul class="characteristics">
               <li class="characteristics-item">
                 <b class="characteristics-value">800 м</b>
-                <span="characteristics-name">Дальность полета</span>
-                              </li>
+                <span class="characteristics-desc">Дальность полета</span>
+    </li>
                               <li class="characteristics-item">
                                 <b class="characteristics-value">50 м</b>
-                                <span class="characteristics-name">Радиус поражения</span>
+                                <span class="characteristics-desc">Радиус поражения</span>
                                               </li>
+                                              </ul>
+                                            </li>
+
+        <li class="promo-slider-item">
+        <h3 class="promo-title">Худеем
+          правильно!</h3>
+            <p class="promo-description">Мотивирующие фитнес-браслеты помогут найти в себе силы не пропускать занятия и соблюдать диету. </p>
+            <a class="button" href="#">ПОДРОБНЕЕ</a>
+            <ul class="characteristics">
+              <li class="characteristics-item">
+                <b class="characteristics-value">48 часов</b>
+                <span class="characteristics-name">Без подзарядки</span>
+                                                                            </li>
+                                                                            </ul>
+                                            </li>
+
+        <li class="promo-slider-item">
+        <h3 class="promo-title">Делай селфи,
+          как Бен Стиллер! </h3>
+            <p class="promo-description">Самая длинная палка для селфи доступна в нашем магазине. Восемь (Восемь, Карл!) метров длиной и весом всего 5 кг.
+            </p>
+            <a class="button" href="#">ПОДРОБНЕЕ</a>
+            <ul class="characteristics">
+              <li class="characteristics-item">
+                <b class="characteristics-value">8,5 м</b>
+                <span class="characteristics-desc">Длина палки</span>
+                              </li>
+                              <li class="characteristics-item">
+                                <b class="characteristics-value">5,5 кг</b>
+                                <span class="characteristics-desc">Вес палки</span>
+                                              </li>
+                                              <li class="characteristics-item">
+                                                <b class="characteristics-value">Карбон</b>
+                                                <span class="characteristics-desc">Материал</span>
+                                                              </li>
+                                                              </ul>
+                                            </li>
+        </ol>
+
         <ol class="slider-pagination">
           <li class="slider-pagination-item">
             <button class="slider-pagination-button slider-pagination-button-current" type="button">
@@ -118,14 +159,28 @@
             <button class="button" type="button">ГАРАНТИЯ</button>
             <button class="button" type="button">КРЕДИТ</button>
                       </div>
+  <ul class="service-list">
+    <li class="service-item">
   <h3 class="service-title">Доставка</h3>
       <p class="service-description">Мы с удовольствием доставим ваш товар прямо
         к вашему подъезду совершенно бесплатно! Ведь
         мы неплохо заработаем, поднимая его на ваш этаж.</p>
-
+      </li>
+      <li class="service-item">
+        <h3 class="service-title">Гарантия</h3>
+            <p class="service-description">Если из-за возгорания купленного у нас товара у вас
+              сгорит дом — не переживайте, мы выдадим вам новый.
+              Товар, не дом, конечно же.</p>
+            </li>
+            <li class="service-item">
+              <h3 class="service-title">Кредит</h3>
+                  <p class="service-description">Залезть в долговую яму стало проще! Кредитные консультанты подберут для вас наиболее выгодные условия кредита. Выгодные для банка, разумеется.</p>
+                  </li>
+      </ul>
 </section>
 <section class="rare-goods">
-  <a class="rare-goods-link" href="#"></a>
+  <h2 class="rare-goods-title visually-hidden">Доставка редких товаров</h2>
+  <a class="rare-goods-link" href="#">Доставим редкий товар под заказ</a>
   <button class="info" type="button">
               <span class="visually-hidden">дополнительная информация</span>
             </button>
@@ -174,6 +229,8 @@
       </form>
       <p class="newsletter-comment">Это бесплатно</p>
     </section>
+    </main>
+
 
 
     <footer class="page-footer">
@@ -182,6 +239,7 @@
       <img class="footer-contacts-logo" src="" alt="Логотип магазина Девайс.">
       <address class="footer-contacts-address">
         <p class="footer-adress-text">Санкт-Петербург, набережная реки Карповки, 5, литера П.</p>
+      </address>
             </section>
             <nav class="navigation-footer">
               <ul class="navigation-footer-list">
@@ -198,12 +256,12 @@
                 <h2 class="page-footer-title visually-hidden">Ссылки на социальные сети</h2>
                 <ul class="footer-social-list">
                     <li class="footer-social-item">
-                      <a class="button" href="#">
+                      <a class="button" href="https://t.me/htmlacademy">
                         <span class="visually-hidden">Телеграм</span>
                       </a>
                     </li>
                     <li class="footer-social-item">
-                      <a class="button" href="#">
+                      <a class="button" href="https://www.youtube.com/user/htmlacademy.ru">
                         <span class="visually-hidden">Ютуб</span>
                       </a>
                     </li>
@@ -213,10 +271,14 @@
                       </a>
                     </li>
                   </ul>
+              </section>
                   <section class="footer-phone">
                     <h2 class="visually-hidden">Контакты</h2>
                     <a class="footer-contacts-address-phone" href="tel:+78128121212">+7 (812) 812-12-12</a>
-                    <a class="htmlacademy-link" href="https://htmlacademy.ru/">.html academy</a>
+                    <a class="htmlacademy-link" href="https://htmlacademy.ru/">
+                      <img class="htmlacademy-logo" alt="Логотип HTML академии." src="">
+                  </a>
                     </section>
+                  </footer>
   </body>
 </html>
