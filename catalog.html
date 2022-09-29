@@ -27,11 +27,25 @@
                     </ul>
         </nav>
       <nav class="navigation">
-        <div class="navigation-dropdown">Каталог товаров
-          <button class="plus-button" type="button">
-            <span class="visually-hidden">Раскрыть список товаров</span>
-          </button>
-                  </div>
+        <div class="navigation-dropdown">
+          <button class="plus-button" type="button">Каталог товаров</button>
+          <div class="dropdown-menu">
+           <ul class="catalog-navigation-list">
+            <li class="catalog-navigation-item">
+              <a class="catalog-navigation-link" href="#">Виртуальная реальность</a></li>
+            <li class="catalog-navigation-item">
+              <a class="catalog-navigation-link" href="#">Фитнес-браслеты</a></li>
+            <li class="catalog-navigation-item">
+              <a class="catalog-navigation-link" href="#">Квадрокоптеры</a></li>
+            <li class="catalog-navigation-item">
+              <a class="catalog-navigation-link" href="catalog.html">Моноподы для селфи</a></li>
+            <li class="catalog-navigation-item">
+              <a class="catalog-navigation-link" href="#">Умные часы</a></li>
+            <li class="catalog-navigation-item">
+              <a class="catalog-navigation-link" href="#">Экшн-камеры</a></li>
+              </ul>
+              </div>
+              </div>
 
             <ul class="navigation-list">
                 <li class="navigation-item">
@@ -129,8 +143,12 @@
           <option value="rating">Рейтинг</option>
         </select>
 
-        <button class="down-button visually-hidden" type="button">Сортировка от меньшего к большему</button>
-        <button class="up-button visually-hidden" type="button">Сортировка от большего к меньшему</button>
+        <button class="down-button" type="button">
+          <span class="visually-hidden">Сортировка от меньшего к большему</span>
+        </button>
+        <button class="up-button visually-hidden" type="button">
+          <span class="visually-hidden">Сортировка от большего к меньшему</span>
+        </button>
 
         <ul class="product-list">
           <li class="product-card">
