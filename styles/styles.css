@@ -20,7 +20,15 @@
   font-display: swap;
 }
 
+html {
+  height: 100%;
+}
+
 body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
   font-family: Rubik, sans-serif;
   font-size: 18px;
   line-height: 30px;
@@ -31,7 +39,9 @@ body {
 .button {
   font-family: "Raleway", sans-serif;
   font-weight: 800;
+  font-size: 18px;
   line-height: 21px;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: #000000;
   text-decoration: none;
@@ -45,10 +55,16 @@ body {
 /* Header*/
 .page-header {
   color: #000000;
-  background-color: #ffe17f;
-  background-size: 100% 100%;
 }
-
+.logo {
+  width: 145px;
+  margin-left: 60px;
+}
+.page-header-container {
+  background-color: #ffe17f;
+  width: 1160px;
+  margin: 0 auto;
+}
 .search-button {
   font-size: 16px;
   line-height: 20px;
@@ -57,6 +73,17 @@ body {
 .search input {
   font-size: 16px;
   line-height: 20px;
+}
+
+.navigation-user {
+  display: flex;
+  width: 1160px;
+  margin: 0 60px;
+}
+.navigation-user-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 .navigation-user-link {
@@ -76,15 +103,30 @@ body {
   color: #000000;
   text-decoration: none;
   text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+.navigation {
+  display: flex;
+  width: 1160px;
+  margin: 0 60px;
+}
+.navigation-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 .plus-button {
   font-family: "Raleway", sans-serif;
   font-weight: 800;
+  font-size: 18px;
   line-height: 21px;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
 }
-
+.catalog-navigation-list {
+  list-style-type: none;
+}
 .catalog-navigation-link {
   font-size: 16px;
   line-height: 18px;
@@ -92,13 +134,25 @@ body {
   text-decoration: none;
 }
 
+.main-container {
+  flex-grow: 1;
+}
+.page-container {
+  width: 1160px;
+  margin: 0 auto;
+}
+
 /* Promo slider*/
+.promo-slider-cards {
+  margin: 0;
+  padding: 0;
+}
 
 .promo-slogan {
   font-family: "Raleway", sans-serif;
   font-weight: 800;
-  font-size: 30px;
-  line-height: 30px;
+  font-size: 50px;
+  line-height: 50px;
 }
 
 .promo-description {
@@ -109,8 +163,9 @@ body {
   font-size: 36px;
   line-height: 30px;
 }
-.characteristic-desc {
+.characteristics-desc {
   color: #444444;
+  font-size: 16px;
 }
 
 .promo-slider-cards {
@@ -127,8 +182,37 @@ body {
   font-weight: 700;
   color: #ffffff;
 }
+.slider-image {
+  display: block;
+  width: 560px;
+  margin: 0;
+  padding: 0;
+}
+
+.promo-wrapper {
+  width: 560px;
+  margin: 0;
+  padding: 0;
+}
+
+.index-columns {
+  display: flex;
+  justify-content: space-between;
+}
 
 /* Goods*/
+
+.goods-list {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+}
+.goods-item {
+  width: 160px;
+}
+
 .goods-link {
   font-family: "Raleway", sans-serif;
   font-weight: 800;
@@ -136,13 +220,25 @@ body {
   line-height: 24px;
   color: #000000;
   text-decoration: none;
+  letter-spacing: -0.02em;
 }
 
 /* Services*/
 .services {
   background-color: #f0f0f0;
 }
+.service-column {
+  display: flex;
+}
 
+.button-group {
+  width: 287px;
+  display: flex;
+  flex-direction: column;
+}
+.service-list {
+  list-style-type: none;
+}
 .service-title {
   font-family: "Raleway", sans-serif;
   font-weight: 800;
@@ -154,6 +250,10 @@ body {
 .service-description {
   color: #444444;
 }
+.service-wrapper {
+  width: 694px;
+  margin-left: 116px;
+}
 
 /*Rare goods*/
 .rare-goods {
@@ -162,6 +262,7 @@ body {
 }
 
 .rare-goods-link {
+  display: block;
   font-family: "Raleway", sans-serif;
   font-weight: 800;
   font-size: 20px;
@@ -169,9 +270,22 @@ body {
   color: #000000;
   text-decoration: none;
   text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+.rare-goods-wrapper {
+  width: 910px;
+  margin: 0 auto;
 }
 
 /*About*/
+.contacts-columns {
+  display: flex;
+  justify-content: space-between;
+}
+.about {
+  width: 520px;
+}
 .about-title {
   font-family: "Raleway", sans-serif;
   font-weight: 800;
@@ -189,6 +303,7 @@ body {
   font-weight: 700;
   line-height: 20px;
   color: #ffe17f;
+  letter-spacing: -0.02em;
 }
 
 .transport-item span {
@@ -197,6 +312,7 @@ body {
 
 /* Contacts*/
 .contacts {
+  width: 532px;
   color: #444444;
 }
 
@@ -227,8 +343,13 @@ body {
 .newsletter {
   background-color: #f0f0f0;
 }
-
+.newsletter-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
 .newsletter-title {
+  display: block;
+  width: 348px;
   font-family: "Raleway", sans-serif;
   font-weight: 800;
   font-size: 50px;
@@ -237,6 +358,14 @@ body {
 }
 
 .newsletter-description {
+  display: block;
+  width: 560px;
+  color: #444444;
+}
+.field::placeholder {
+  font-family: Rubik, sans-serif;
+  font-size: 18px;
+  line-height: 30px;
   color: #444444;
 }
 
@@ -244,17 +373,29 @@ body {
   color: #444444;
 }
 /*Footer*/
+.page-footer-container {
+  display: flex;
+  width: 1160px;
+  margin: 0 auto;
+}
+
 .page-footer {
   background-color: #444444;
   color: #ffffff;
   font-size: 16px;
   line-height: 20px;
 }
+.footer-contacts {
+  width: 239px;
+}
 
 .footer-adress-text {
   font-style: normal;
 }
-
+.footer-wrapper {
+  width: 444px;
+  margin-left: 119px;
+}
 .navigation-footer-link {
   font-family: "Raleway", sans-serif;
   font-weight: 800;
@@ -263,6 +404,14 @@ body {
   color: #ffffff;
   text-decoration: none;
   text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+.footer-social-item span {
+  color: #ffffff;
+}
+.footer-phone {
+  width: 175px;
+  margin-left: auto;
 }
 
 .footer-contacts-address-phone {
@@ -287,6 +436,7 @@ body {
 }
 
 .catalog-products {
+  display: flex;
   background-color: #f0f0f0;
 }
 
@@ -296,14 +446,22 @@ body {
   font-size: 16px;
   line-height: 19px;
   text-transform: uppercase;
+  letter-spacing: 0.2em;
 }
-
+.filter-wrapper {
+  width: 320px;
+}
+.catalog-right-column {
+  width: 840px;
+}
 .catalog-filter-title {
   font-weight: 700;
   font-size: 18px;
+  letter-spacing: -0.02em;
 }
 
-.select-control option {
+.select-control {
+  font-family: Rubik, sans-serif;
   font-size: 18px;
   line-height: 30px;
   background-color: #f0f0f0;
@@ -311,6 +469,7 @@ body {
 
 .product-catalog {
   background-color: #ffffff;
+  width: 840px;
 }
 .product-card-link {
   text-decoration: none;
@@ -319,6 +478,8 @@ body {
 .product-card-title {
   font-weight: 700;
   font-size: 18px;
+  line-height: 20px;
+  letter-spacing: -0.02em;
   color: #000000;
 }
 
@@ -351,4 +512,5 @@ body {
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
+  letter-spacing: 0.2em;
 }
