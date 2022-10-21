@@ -7,7 +7,7 @@
   </head>
   <body>
     <header class="page-header">
-      <div class="page-header-container">
+      <div class="page-header-container catalog-header-background">
         <div class="logo">
           <img
             class="page-header-logo"
@@ -17,8 +17,7 @@
             alt="Логотип магазина Девайс."
           />
         </div>
-
-        <nav class="navigation-user">
+        <div class="navigation-top">
           <form
             class="search"
             action="https://echo.htmlacademy.ru/"
@@ -27,65 +26,66 @@
             <input type="search" name="search" placeholder="Поиск по сайту" />
             <button class="search-button" type="submit">Найти</button>
           </form>
-          <ul class="navigation-user-list">
-            <li class="navigation-user-item">
-              <a class="navigation-user-link" href="#">Коля Петухов</a>
+          <nav class="navigation-user">
+            <ul class="navigation-user-list">
+              <li class="navigation-user-item">
+                <a class="navigation-user-link" href="#">Коля Петухов</a>
+              </li>
+              <li class="navigation-user-item">
+                <a class="navigation-user-link shadow" href="#">Выйти</a>
+              </li>
+              <li class="navigation-user-item">
+                <a class="navigation-user-link" href="#">Сравнить</a>
+              </li>
+              <li class="navigation-user-item">
+                <span>2</span>
+                <a class="navigation-user-link" href="#">Корзина</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <nav class="navigation">
+          <div class="dropdown-menu">
+            <button class="plus-button" type="button">Каталог товаров</button>
+          </div>
+          <ul class="navigation-list">
+            <li class="navigation-item">
+              <a class="navigation-link" href="delivery.html">Доставка</a>
             </li>
-            <li class="navigation-user-item">
-              <a class="navigation-user-link shadow" href="#">Выйти</a>
+            <li class="navigation-item">
+              <a class="navigation-link" href="warranty.html">Гарантия</a>
             </li>
-            <li class="navigation-user-item">
-              <a class="navigation-user-link" href="#">Сравнить</a>
-            </li>
-            <li class="navigation-user-item">
-              <span>2</span>
-              <a class="navigation-user-link" href="#">Корзина</a>
+            <li class="navigation-item">
+              <a class="navigation-link" href="contacts.html">Контакты</a>
             </li>
           </ul>
         </nav>
-        <nav class="navigation">
-          <div class="navigation-dropdown">
-            <button class="plus-button" type="button">Каталог товаров</button>
-            <ul class="navigation-list">
-              <li class="navigation-item">
-                <a class="navigation-link" href="delivery.html">Доставка</a>
-              </li>
-              <li class="navigation-item">
-                <a class="navigation-link" href="warranty.html">Гарантия</a>
-              </li>
-              <li class="navigation-item">
-                <a class="navigation-link" href="contacts.html">Контакты</a>
-              </li>
-            </ul>
-            <div class="dropdown-menu">
-              <ul class="catalog-navigation-list">
-                <li class="catalog-navigation-item">
-                  <a class="catalog-navigation-link" href="#"
-                    >Виртуальная реальность</a
-                  >
-                </li>
-                <li class="catalog-navigation-item">
-                  <a class="catalog-navigation-link" href="#"
-                    >Фитнес-браслеты</a
-                  >
-                </li>
-                <li class="catalog-navigation-item">
-                  <a class="catalog-navigation-link" href="#">Квадрокоптеры</a>
-                </li>
-                <li class="catalog-navigation-item">
-                  <a class="catalog-navigation-link" href="catalog.html"
-                    >Моноподы для селфи</a
-                  >
-                </li>
-                <li class="catalog-navigation-item">
-                  <a class="catalog-navigation-link" href="#">Умные часы</a>
-                </li>
-                <li class="catalog-navigation-item">
-                  <a class="catalog-navigation-link" href="#">Экшн-камеры</a>
-                </li>
-              </ul>
-            </div>
-          </div>
+        <!--временно спрятали раскрывающийся список-->
+        <nav class="catalog-navigation" hidden>
+          <ul class="catalog-navigation-list">
+            <li class="catalog-navigation-item">
+              <a class="catalog-navigation-link" href="#"
+                >Виртуальная реальность</a
+              >
+            </li>
+            <li class="catalog-navigation-item">
+              <a class="catalog-navigation-link" href="#">Фитнес-браслеты</a>
+            </li>
+            <li class="catalog-navigation-item">
+              <a class="catalog-navigation-link" href="#">Квадрокоптеры</a>
+            </li>
+            <li class="catalog-navigation-item">
+              <a class="catalog-navigation-link" href="catalog.html"
+                >Моноподы для селфи</a
+              >
+            </li>
+            <li class="catalog-navigation-item">
+              <a class="catalog-navigation-link" href="#">Умные часы</a>
+            </li>
+            <li class="catalog-navigation-item">
+              <a class="catalog-navigation-link" href="#">Экшн-камеры</a>
+            </li>
+          </ul>
         </nav>
       </div>
     </header>
@@ -207,23 +207,26 @@
             </form>
           </div>
           <div class="catalog-right-column">
-            <h2 class="filters">Сортировка:</h2>
-            <select class="select-control" aria-label="Сортировка">
-              <option value="popular">Популярные</option>
-              <option value="price">Цена</option>
-              <option value="rating">Рейтинг</option>
-            </select>
-
-            <button class="down-button" type="button">
-              <span class="visually-hidden"
-                >Сортировка от меньшего к большему</span
-              >
-            </button>
-            <button class="up-button visually-hidden" type="button">
-              <span class="visually-hidden"
-                >Сортировка от большего к меньшему</span
-              >
-            </button>
+            <div class="select-wrapper">
+              <h2 class="filters">Сортировка:</h2>
+              <select class="select-control" aria-label="Сортировка">
+                <option value="popular">Популярные</option>
+                <option value="price">Цена</option>
+                <option value="rating">Рейтинг</option>
+              </select>
+              <div class="select-buttons">
+                <button class="down-button" type="button">
+                  <span class="visually-hidden"
+                    >Сортировка от меньшего к большему</span
+                  >
+                </button>
+                <button class="up-button" type="button">
+                  <span class="visually-hidden"
+                    >Сортировка от большего к меньшему</span
+                  >
+                </button>
+              </div>
+            </div>
             <div class="product-catalog">
               <ul class="product-list">
                 <li class="product-card">
@@ -295,18 +298,13 @@
                   </a>
                 </li>
               </ul>
+
               <button class="button pagination-show-more" type="button">
                 Загрузить ещё
               </button>
               <div class="pagination-wrapper">
+                <button class="pagination-move" type="button">Назад</button>
                 <ul class="pagination">
-                  <li class="pagination-item">
-                    <a
-                      class="pagination-link pagination-prev pagination-disabled"
-                    >
-                      <span>Назад</span>
-                    </a>
-                  </li>
                   <li class="pagination-item">
                     <a class="pagination-link pagination-current">1</a>
                   </li>
@@ -322,12 +320,8 @@
                   <li class="pagination-item">
                     <a class="pagination-link" href="#">15</a>
                   </li>
-                  <li class="pagination-item">
-                    <a class="pagination-link pagination-next" href="#">
-                      <span>Вперед</span>
-                    </a>
-                  </li>
                 </ul>
+                <button class="pagination-move" type="button">Вперёд</button>
               </div>
             </div>
           </div>
