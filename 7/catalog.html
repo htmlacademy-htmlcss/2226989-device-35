@@ -9,7 +9,7 @@
   <body>
     <header class="page-header">
       <div class="page-header-container catalog-header-background">
-        <div class="logo">
+        <a class="logo">
           <img
             class="page-header-logo"
             src="images/logo-black.svg"
@@ -17,7 +17,7 @@
             height="36"
             alt="Логотип магазина Девайс."
           />
-        </div>
+        </a>
         <div class="navigation-top">
           <form
             class="search"
@@ -40,6 +40,36 @@
               </li>
               <li class="navigation-user-item">
                 <span>2</span>
+
+                <div class="popover-content">
+                  <ul class="cart-items-list">
+                    <li class="cart-item">
+                      <img
+                        class="cart-item-image"
+                        src="images/monopods/for-beginners.png"
+                        width="39"
+                        height="43"
+                        alt="селфи-палка с установленным телефоном"
+                      />
+                      <p class="cart-item-title">Любительская селфи-палка</p>
+                    </li>
+                    <li class="cart-item">
+                      <img
+                        class="cart-item-image"
+                        src="images/monopods/professional.png"
+                        width="39"
+                        height="43"
+                        alt="селфи-палка с креплением для профессиональной техники"
+                      />
+                      <p class="cart-item-title">
+                        Профессиональная селфи-палка
+                      </p>
+                    </li>
+                  </ul>
+                  <div class="cart-number">Товаров: 2</div>
+                  <div class="cart-sum">Сумма: 2000 ₽</div>
+                  <a class="button" href="#">Открыть корзину</a>
+                </div>
                 <a class="navigation-user-link" href="#">Корзина</a>
               </li>
             </ul>
@@ -49,6 +79,42 @@
           <div class="dropdown-menu">
             <button class="plus-button" type="button">Каталог товаров</button>
           </div>
+          <!--временно спрятали раскрывающийся список-->
+
+          <nav class="catalog-navigation" hidden>
+            <div class="catalog-navigation-container">
+              <ul class="catalog-navigation-list">
+                <li class="catalog-navigation-item">
+                  <a class="catalog-navigation-link" href="#"
+                    >Виртуальная реальность</a
+                  >
+                </li>
+                <li class="catalog-navigation-item">
+                  <a class="catalog-navigation-link" href="catalog.html"
+                    >Моноподы для селфи</a
+                  >
+                </li>
+                <li class="catalog-navigation-item">
+                  <a class="catalog-navigation-link" href="#">Экшн-камеры</a>
+                </li>
+              </ul>
+              <ul class="catalog-navigation-list">
+                <li class="catalog-navigation-item">
+                  <a class="catalog-navigation-link" href="#"
+                    >Фитнес-браслеты</a
+                  >
+                </li>
+                <li class="catalog-navigation-item">
+                  <a class="catalog-navigation-link" href="#">Умные часы</a>
+                </li>
+              </ul>
+              <ul class="catalog-navigation-list">
+                <li class="catalog-navigation-item">
+                  <a class="catalog-navigation-link" href="#">Квадрокоптеры</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
           <ul class="navigation-list">
             <li class="navigation-item">
               <a class="navigation-link" href="delivery.html">Доставка</a>
@@ -58,33 +124,6 @@
             </li>
             <li class="navigation-item">
               <a class="navigation-link" href="contacts.html">Контакты</a>
-            </li>
-          </ul>
-        </nav>
-        <!--временно спрятали раскрывающийся список-->
-        <nav class="catalog-navigation" hidden>
-          <ul class="catalog-navigation-list">
-            <li class="catalog-navigation-item">
-              <a class="catalog-navigation-link" href="#"
-                >Виртуальная реальность</a
-              >
-            </li>
-            <li class="catalog-navigation-item">
-              <a class="catalog-navigation-link" href="#">Фитнес-браслеты</a>
-            </li>
-            <li class="catalog-navigation-item">
-              <a class="catalog-navigation-link" href="#">Квадрокоптеры</a>
-            </li>
-            <li class="catalog-navigation-item">
-              <a class="catalog-navigation-link" href="catalog.html"
-                >Моноподы для селфи</a
-              >
-            </li>
-            <li class="catalog-navigation-item">
-              <a class="catalog-navigation-link" href="#">Умные часы</a>
-            </li>
-            <li class="catalog-navigation-item">
-              <a class="catalog-navigation-link" href="#">Экшн-камеры</a>
             </li>
           </ul>
         </nav>
@@ -204,8 +243,8 @@
                   </li>
                 </ul>
               </fieldset>
+              <button class="button" type="submit">Показать</button>
             </form>
-            <button class="button show-button" type="submit">Показать</button>
           </div>
           <div class="catalog-right-column">
             <div class="select-wrapper">
@@ -246,6 +285,7 @@
                       <b class="product-card-price">500 ₽</b>
                     </div>
                   </a>
+                  <a class="button">Подробнее</a>
                 </li>
                 <li class="product-card">
                   <a class="product-card-link" href="#">
@@ -263,6 +303,7 @@
                       <b class="product-card-price">1500 ₽</b>
                     </div>
                   </a>
+                  <a class="button">Подробнее</a>
                 </li>
                 <li class="product-card">
                   <a class="product-card-link" href="#">
@@ -280,6 +321,7 @@
                       <b class="product-card-price">2500 ₽</b>
                     </div>
                   </a>
+                  <a class="button">Подробнее</a>
                 </li>
                 <li class="product-card">
                   <a class="product-card-link" href="#">
@@ -297,6 +339,7 @@
                       <b class="product-card-price">1500 ₽</b>
                     </div>
                   </a>
+                  <a class="button">Подробнее</a>
                 </li>
               </ul>
 
@@ -304,7 +347,7 @@
                 Загрузить ещё
               </button>
               <div class="pagination-wrapper">
-                <button class="pagination-move" type="button">Назад</button>
+                <a class="button">Назад</a>
                 <ul class="pagination">
                   <li class="pagination-item">
                     <a class="pagination-link pagination-current">1</a>
@@ -322,7 +365,7 @@
                     <a class="pagination-link" href="#">15</a>
                   </li>
                 </ul>
-                <button class="pagination-move" type="button">Вперёд</button>
+                <a class="button">Вперед</a>
               </div>
             </div>
           </div>
@@ -334,13 +377,15 @@
       <div class="page-footer-container">
         <section class="footer-contacts">
           <h2 class="visually-hidden">Контакты</h2>
-          <img
-            class="footer-contacts-logo"
-            src="images/logo-yellow.svg"
-            width="145"
-            height="36"
-            alt="Логотип магазина Девайс."
-          />
+          <a class="logo-footer">
+            <img
+              class="footer-contacts-logo"
+              src="images/logo-yellow.svg"
+              width="145"
+              height="36"
+              alt="Логотип магазина Девайс."
+            />
+          </a>
           <address class="footer-contacts-address">
             <p class="footer-adress-text">
               Санкт-Петербург, набережная реки Карповки, 5, литера П.
