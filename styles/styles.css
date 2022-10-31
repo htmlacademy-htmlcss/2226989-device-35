@@ -61,6 +61,7 @@ body {
   text-decoration: none;
   padding: 10px 21px;
   cursor: pointer;
+  z-index: 2;
 }
 
 .button::before {
@@ -80,6 +81,10 @@ body {
 
 .button:hover {
   background-color: #ffe17f;
+}
+
+.button:active::before {
+  content: none;
 }
 
 .button:active {
@@ -134,7 +139,7 @@ body {
   margin: 40px auto 0;
   padding-top: 45px;
   position: relative;
-  z-index: -2;
+  z-index: 0;
 }
 
 .navigation-top {
@@ -163,6 +168,9 @@ body {
 
 .navigation-user-item {
   margin-right: 22px;
+  background-repeat: no-repeat;
+  background-position: left;
+  display: block;
 }
 
 .navigation-user-list {
@@ -176,17 +184,17 @@ body {
 
 .navigation-user-link {
   position: relative;
-  display: inline-block;
+  display: block;
   color: #000000;
   text-decoration: none;
   padding: 5px 0 5px 22px;
 }
 
-.navigation-user-link:hover {
+.navigation-user-item:hover {
   opacity: 60%;
 }
 
-.navigation-user-link:active {
+.navigation-user-item:active {
   opacity: 30%;
 }
 
@@ -210,6 +218,8 @@ body {
   position: absolute;
   top: 12px;
   left: -10px;
+  z-index: 2;
+  display: block;
 }
 
 .navigation-user-item span::before {
@@ -228,15 +238,17 @@ body {
   opacity: 30%;
 }
 
-.navigation-icon {
-  position: absolute;
-  display: block;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 10px;
-  margin: auto -12px;
-  z-index: -2;
+.navigation-user-item:nth-child(1) {
+  background-image: url(../images/icons/icon-login.svg);
+}
+
+.navigation-user-item:nth-child(3) {
+  background-image: url(../images/icons/icon-compare.svg);
+}
+
+.navigation-user-item:nth-child(4) {
+  background-image: url(../images/icons/icon-basket.svg);
+  z-index: 0;
 }
 
 .popover-content {
@@ -356,30 +368,15 @@ body {
   cursor: pointer;
 }
 
-.plus-button:hover .plus-icon {
-  opacity: 100%;
-}
-
-.plus-button:active .plus-icon {
-  opacity: 100%;
-}
-
-.plus-button:focus {
-  outline: 2px solid #af4fff;
-}
-
-.plus-icon {
+.catalog-navigation {
   position: absolute;
-  display: block;
-  margin: auto;
-  top: 0;
-  right: 0;
-  opacity: 30%;
+  top: 48px;
+  display: none;
 }
 
 .catalog-navigation-container {
-  width: 1160px;
-  padding: 33px 60px;
+  width: 100%;
+  padding: 14px 0 27px 0;
   display: flex;
 }
 
@@ -388,6 +385,8 @@ body {
   display: flex;
   flex-direction: column;
   margin: 0;
+  padding: 0;
+  min-height: 120px;
 }
 
 .catalog-navigation-list:first-child {
@@ -395,13 +394,18 @@ body {
 }
 
 .catalog-navigation-link {
+  font-family: Rubik, sans-serif;
+  font-weight: 400;
   font-size: 16px;
   line-height: 18px;
+  text-transform: none;
+  letter-spacing: 0;
   color: #000000;
   text-decoration: none;
   display: block;
   min-width: 211px;
   margin-bottom: 18px;
+  text-align: left;
 }
 
 .catalog-navigation-link:hover {
@@ -418,6 +422,35 @@ body {
 
 .catalog-navigation-link:focus span {
   outline: 2px solid #af4fff;
+}
+
+.plus-button:hover .catalog-navigation {
+  display: block;
+}
+
+.plus-button:hover .plus-icon {
+  opacity: 100%;
+}
+
+.plus-button:active .plus-icon {
+  opacity: 100%;
+}
+
+.plus-button:active .catalog-navigation {
+  display: block;
+}
+
+.plus-button:focus {
+  outline: 2px solid #af4fff;
+}
+
+.plus-icon {
+  position: absolute;
+  display: block;
+  margin: auto;
+  top: 0;
+  right: 0;
+  opacity: 30%;
 }
 
 .main-container {
@@ -491,6 +524,11 @@ body {
 
 .promo-slider-item {
   position: relative;
+  display: none;
+}
+
+.promo-slider-item-current {
+  display: block;
 }
 
 .promo-slider-item::before {
@@ -539,15 +577,32 @@ body {
   height: 160px;
   background-color: #ffe17f;
   margin-bottom: 32px;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
-.goods-icon {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  margin: auto;
+.goods-item:nth-child(1) .goods-wrapper {
+  background-image: url(../images/goods/virtual-reality.svg);
+}
+
+.goods-item:nth-child(2) .goods-wrapper {
+  background-image: url(../images/goods/monopod.svg);
+}
+
+.goods-item:nth-child(3) .goods-wrapper {
+  background-image: url(../images/goods/action-camera.svg);
+}
+
+.goods-item:nth-child(4) .goods-wrapper {
+  background-image: url(../images/goods/fitness-tracker.svg);
+}
+
+.goods-item:nth-child(5) .goods-wrapper {
+  background-image: url(../images/goods/smart-watch.svg);
+}
+
+.goods-item:nth-child(6) .goods-wrapper {
+  background-image: url(../images/goods/quadrocopter.svg);
 }
 
 .goods-list {
@@ -591,7 +646,7 @@ body {
 .services {
   margin-bottom: 70px;
   background-color: #f0f0f0;
-  z-index: -3;
+  z-index: 0;
   position: relative;
 }
 
@@ -601,7 +656,7 @@ body {
   background-color: #ffffff;
   width: 100%;
   height: 102px;
-  z-index: -2;
+  z-index: -1;
 }
 
 .service-column {
@@ -621,7 +676,6 @@ body {
   min-width: 160px;
   margin-bottom: 35px;
   border: none;
-  z-index: -1;
   padding: 10px 11px;
   cursor: pointer;
 }
@@ -631,10 +685,12 @@ body {
   background-color: #000000;
   color: #ffe17f;
   text-align: left;
+  padding-left: 34px;
 }
 
 .button-current:hover {
-  padding-left: 20px;
+  padding-left: 54px;
+  background-color: #000000;
 }
 
 .button-current:active {
@@ -649,6 +705,14 @@ body {
   list-style-type: none;
   padding: 0;
   margin: 0;
+}
+
+.service-item {
+  display: none;
+}
+
+.service-item-current {
+  display: block;
 }
 
 .service-title {
@@ -725,6 +789,9 @@ body {
   width: 125px;
   height: 100%;
   background-color: #ffe17f;
+  background-image: url(../images/rare-delivery.svg);
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .rare-goods-icon {
@@ -747,18 +814,9 @@ body {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: #000000;
-  opacity: 0%;
-}
-
-.info-icon {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 1077px;
-  margin: auto 0;
-  z-index: 2;
+  background-image: url(../images/icons/icon-info.svg);
+  background-repeat: no-repeat;
+  background-position: center;
   opacity: 30%;
 }
 
@@ -816,6 +874,7 @@ body {
   font-size: 50px;
   line-height: 50px;
   padding: 47px 0;
+  color: #000000;
 }
 
 .about-introduction {
@@ -921,15 +980,19 @@ body {
   padding: 18px 39px;
 }
 
+.newsletter-button::before {
+  content: none;
+}
+
 .newsletter-button:hover {
   background-color: #000000;
-  border: #000000;
+  border-color: #000000;
   color: #ffffff;
 }
 
 .newsletter-button:active {
   background-color: #000000;
-  border: #000000;
+  border-color: #000000;
 }
 
 .newsletter-button:active span {
@@ -1052,7 +1115,7 @@ body {
 .footer-social-list {
   list-style-type: none;
   display: flex;
-  width: 165px;
+  width: 150px;
   flex-wrap: wrap;
   margin: auto;
   padding: 0;
@@ -1063,15 +1126,34 @@ body {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  margin-right: 15px;
   margin-left: 0;
   padding: 0;
   margin-bottom: 15px;
   background-color: rgba(255, 255, 255, 0.3);
   position: relative;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
-.footer-social-link:nth-child(3n) {
+.footer-social-tg {
+  background-image: url(../images/social-media/telegram.svg);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.footer-social-yt {
+  background-image: url(../images/social-media/youtube.svg);
+}
+
+.footer-social-twitter {
+  background-image: url(../images/social-media/twitter.svg);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.footer-social-item {
+  margin-right: 15px;
+}
+
+.footer-social-item:nth-child(3n) {
   margin-right: 0;
 }
 
@@ -1182,6 +1264,18 @@ body {
   margin: 0 16px;
 }
 
+.breadcrumbs-link:hover {
+  opacity: 60%;
+}
+
+.breadcrumbs-link:active {
+  opacity: 30%;
+}
+
+.breadcrumbs-link:focus {
+  outline: 2px solid #af4fff;
+}
+
 .catalog-products {
   background-color: #f0f0f0;
 }
@@ -1239,10 +1333,19 @@ body {
   margin: auto 0;
   border: none;
   cursor: pointer;
+  width: 30px;
+  height: 30px;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 20%;
 }
 
-.sort-button svg {
-  opacity: 20%;
+.sort-button-up {
+  background-image: url(../images/icons/icon-sort-up.svg);
+}
+
+.sort-button-down {
+  background-image: url(../images/icons/icon-sort-down.svg);
 }
 
 .sort-button:hover {
@@ -1496,6 +1599,10 @@ body {
 
 .pagination-wrapper .button {
   padding: 25px;
+}
+
+.pagination-wrapper .button::before {
+  content: none;
 }
 
 .pagination-wrapper .button:hover {
