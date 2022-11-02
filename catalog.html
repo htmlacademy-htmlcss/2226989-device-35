@@ -29,7 +29,9 @@
           <nav class="navigation-user">
             <ul class="navigation-user-list">
               <li class="navigation-user-item">
-                <a class="navigation-user-link" href="#">Коля Петухов </a>
+                <a class="navigation-user-link icon-login" href="#"
+                  >Коля Петухов
+                </a>
               </li>
               <li class="navigation-user-item">
                 <a
@@ -39,10 +41,12 @@
                 >
               </li>
               <li class="navigation-user-item">
-                <a class="navigation-user-link" href="#"> Сравнить </a>
+                <a class="navigation-user-link icon-compare" href="#">
+                  Сравнить
+                </a>
               </li>
               <li class="navigation-user-item">
-                <a class="navigation-user-link" href="#">
+                <a class="navigation-user-link icon-basket" href="#">
                   <span class="cart-summary">2</span>
 
                   Корзина
@@ -50,26 +54,36 @@
                 <div class="popover-content">
                   <ul class="cart-items-list">
                     <li class="cart-item">
-                      <img
-                        class="cart-item-image"
-                        src="images/monopods/for-beginners.png"
-                        width="39"
-                        height="43"
-                        alt="селфи-палка с установленным телефоном"
-                      />
-                      <p class="cart-item-title">Любительская селфи-палка</p>
+                      <a class="cart-link" href="#">
+                        <img
+                          class="cart-item-image"
+                          src="images/monopods/for-beginners.png"
+                          width="39"
+                          height="43"
+                          alt="селфи-палка с установленным телефоном"
+                        />
+                        <p class="cart-item-title">Любительская селфи-палка</p>
+                      </a>
+                      <button class="popover-close-button">
+                        <span class="visually-hidden">Закрыть</span>
+                      </button>
                     </li>
                     <li class="cart-item">
-                      <img
-                        class="cart-item-image"
-                        src="images/monopods/professional.png"
-                        width="39"
-                        height="43"
-                        alt="селфи-палка с креплением для профессиональной техники"
-                      />
-                      <p class="cart-item-title">
-                        Профессиональная селфи-палка
-                      </p>
+                      <a class="cart-link" href="#">
+                        <img
+                          class="cart-item-image"
+                          src="images/monopods/professional.png"
+                          width="39"
+                          height="43"
+                          alt="селфи-палка с креплением для профессиональной техники"
+                        />
+                        <p class="cart-item-title">
+                          Профессиональная селфи-палка
+                        </p>
+                      </a>
+                      <button class="popover-close-button">
+                        <span class="visually-hidden">Закрыть</span>
+                      </button>
                     </li>
                   </ul>
                   <div class="cart-number">Товаров: 2</div>
@@ -81,68 +95,67 @@
           </nav>
         </div>
         <nav class="navigation">
-          <div class="dropdown-menu">
-            <button class="plus-button" type="button">
-              Каталог товаров<svg
-                class="plus-icon"
-                aria-hidden="true"
-                focusable="false"
-                xmlns="http://www.w3.org/2000/svg"
-                width="50"
-                height="51"
-                fill="none"
-              >
-                <circle
-                  cx="25"
-                  cy="25.79"
-                  r="24"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-                <path
-                  d="M33 24.79h-7v-7h-2v7h-7v2h7v7h2v-7h7v-2Z"
-                  fill="#000"
-                />
-              </svg>
-              <nav class="catalog-navigation">
-                <div class="catalog-navigation-container">
-                  <ul class="catalog-navigation-list">
-                    <li class="catalog-navigation-item">
-                      <a class="catalog-navigation-link" href="#"
-                        >Виртуальная реальность</a
-                      >
-                    </li>
-                    <li class="catalog-navigation-item">
-                      <a class="catalog-navigation-link" href="catalog.html"
-                        >Моноподы для селфи</a
-                      >
-                    </li>
-                    <li class="catalog-navigation-item">
-                      <a class="catalog-navigation-link" href="#">Экшн-камеры</a>
-                    </li>
-                  </ul>
-                  <ul class="catalog-navigation-list">
-                    <li class="catalog-navigation-item">
-                      <a class="catalog-navigation-link" href="#"
-                        >Фитнес-браслеты</a
-                      >
-                    </li>
-                    <li class="catalog-navigation-item">
-                      <a class="catalog-navigation-link" href="#">Умные часы</a>
-                    </li>
-                  </ul>
-                  <ul class="catalog-navigation-list">
-                    <li class="catalog-navigation-item">
-                      <a class="catalog-navigation-link" href="#"
-                        >Квадрокоптеры</a
-                      >
-                    </li>
-                  </ul>
-                </div>
-              </nav>
-
-          </div>
           <ul class="navigation-list">
+            <li class="navigation-item">
+              <a class="navigation-link plus-button" href="#">
+                Каталог товаров<svg
+                  class="plus-icon"
+                  aria-hidden="true"
+                  focusable="false"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="50"
+                  height="51"
+                  fill="none"
+                >
+                  <circle
+                    cx="25"
+                    cy="25.79"
+                    r="24"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M33 24.79h-7v-7h-2v7h-7v2h7v7h2v-7h7v-2Z"
+                    fill="#000"
+                  />
+                </svg>
+              </a>
+              <div class="catalog-navigation-container">
+                <ul class="catalog-navigation-list">
+                  <li class="catalog-navigation-item">
+                    <a class="catalog-navigation-link" href="#"
+                      >Виртуальная реальность</a
+                    >
+                  </li>
+                  <li class="catalog-navigation-item">
+                    <a class="catalog-navigation-link" href="catalog.html"
+                      >Моноподы для селфи</a
+                    >
+                  </li>
+                  <li class="catalog-navigation-item">
+                    <a class="catalog-navigation-link" href="#">Экшн-камеры</a>
+                  </li>
+                </ul>
+                <ul class="catalog-navigation-list">
+                  <li class="catalog-navigation-item">
+                    <a class="catalog-navigation-link" href="#"
+                      >Фитнес-браслеты</a
+                    >
+                  </li>
+                  <li class="catalog-navigation-item">
+                    <a class="catalog-navigation-link" href="#">Умные часы</a>
+                  </li>
+                </ul>
+                <ul class="catalog-navigation-list">
+                  <li class="catalog-navigation-item">
+                    <a class="catalog-navigation-link" href="#"
+                      >Квадрокоптеры</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+
             <li class="navigation-item">
               <a class="navigation-link" href="delivery.html"
                 ><span>Доставка</span></a
@@ -288,12 +301,12 @@
               </select>
               <div class="select-buttons">
                 <button class="sort-button sort-button-up" type="button">
-                                   <span class="visually-hidden"
+                  <span class="visually-hidden"
                     >Сортировка от меньшего к большему</span
                   >
                 </button>
                 <button class="sort-button sort-button-down" type="button">
-                                   <span class="visually-hidden"
+                  <span class="visually-hidden"
                     >Сортировка от большего к меньшему</span
                   >
                 </button>
