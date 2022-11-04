@@ -168,9 +168,8 @@ body {
 
 .navigation-user-item {
   margin-right: 22px;
-  background-repeat: no-repeat;
-  background-position: left;
   display: block;
+  position: relative;
 }
 
 .navigation-user-list {
@@ -188,10 +187,16 @@ body {
   color: #000000;
   text-decoration: none;
   padding: 5px 0 5px 22px;
+  background-repeat: no-repeat;
+  background-position: left;
 }
 
 .navigation-user-item:hover {
   opacity: 60%;
+}
+
+.navigation-user-item:hover .popover-content {
+  display: grid;
 }
 
 .navigation-user-item:active {
@@ -238,15 +243,15 @@ body {
   opacity: 30%;
 }
 
-.navigation-user-item:nth-child(1) {
+.icon-login {
   background-image: url(../images/icons/icon-login.svg);
 }
 
-.navigation-user-item:nth-child(3) {
+.icon-compare {
   background-image: url(../images/icons/icon-compare.svg);
 }
 
-.navigation-user-item:nth-child(4) {
+.icon-basket {
   background-image: url(../images/icons/icon-basket.svg);
   z-index: 0;
 }
@@ -257,16 +262,50 @@ body {
   line-height: 20px;
   color: #ffffff;
   width: 320px;
-  /*временно спрятали поповер, далее будет:
-  display: grid;*/
   display: none;
   grid-template-columns: 160px 160px;
+  position: absolute;
+  top: 36px;
+  right: -77px;
+  z-index: 2;
+  box-sizing: border-box;
+}
+
+.popover-content::before {
+  content: "";
+  width: 14px;
+  height: 6px;
+  display: block;
+  background-image: url(../images/popover/triangle.svg);
+  background-repeat: no-repeat;
+  position: absolute;
+  top: -6px;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.cart-link {
+  display: flex;
+  padding: 20px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.cart-link:hover {
+  opacity: 60%;
+}
+
+.cart-link:active {
+  opacity: 30%;
+}
+
+.cart-link:focus {
+  outline: 2px solid #af4fff;
 }
 
 .cart-item {
-  display: flex;
-  padding: 20px;
-  grid-column: 1 / 3;
+  position: relative;
 }
 
 .cart-item-image {
@@ -277,10 +316,38 @@ body {
   list-style-type: none;
   margin: 0;
   padding: 0;
+  grid-column: 1 / 3;
 }
 
 .cart-item-title {
+  margin: 0 20px 0 0;
+}
+
+.popover-close-button {
+  width: 10px;
+  height: 10px;
+  padding: 0;
   margin: 0;
+  background-image: url(../images/popover/cross.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #000000;
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  z-index: 3;
+}
+
+.popover-close-button:hover {
+  opacity: 60%;
+}
+
+.popover-close-button:active {
+  opacity: 30%;
+}
+
+.popover-close-button:focus {
+  outline: 2px solid #af4fff;
 }
 
 .cart-sum {
@@ -303,12 +370,34 @@ body {
   padding: 15px;
   margin: 20px;
   grid-column: 1 / 3;
+  z-index: 3;
+}
+
+.popover-content .button::before {
+  content: none;
+}
+
+.popover-content .button:hover {
+  background-color: #ffe17f;
+}
+
+.popover-content .button:active {
+  background-color: #ffe17f;
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.popover-content .button:focus {
+  outline: 2px solid #af4fff;
+}
+
+.popover-content .button:disabled {
+  color: rgba(0, 0, 0, 0.3);
 }
 
 .navigation {
   margin: 0 60px 0 60px;
-  display: flex;
   justify-content: space-between;
+  position: relative;
 }
 
 .navigation-link {
@@ -321,24 +410,12 @@ body {
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 0.2em;
+  display: inline-block;
 }
 
-.navigation-link:hover {
-  opacity: 60%;
+.navigation-item:first-child {
+  flex-grow: 1;
 }
-
-.navigation-link:active {
-  opacity: 30%;
-}
-
-.navigation-link:focus {
-  outline: none;
-}
-
-.navigation-link:focus span {
-  outline: 2px solid #af4fff;
-}
-
 .navigation-link:last-child {
   padding-right: 0;
 }
@@ -355,29 +432,19 @@ body {
   position: relative;
   min-width: 300px;
   flex-grow: 1;
-  font-family: Raleway, sans-serif;
-  font-weight: 800;
-  font-size: 18px;
-  line-height: 21px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  padding: 15px 57px 15px 0;
+  padding: 15px 0;
   margin: 0;
   border: none;
   background-color: #ffe17f;
   cursor: pointer;
 }
 
-.catalog-navigation {
+.catalog-navigation-container {
   position: absolute;
   top: 48px;
-  display: none;
-}
-
-.catalog-navigation-container {
   width: 100%;
   padding: 14px 0 27px 0;
-  display: flex;
+  display: none;
 }
 
 .catalog-navigation-list {
@@ -408,6 +475,38 @@ body {
   text-align: left;
 }
 
+.navigation-link:hover {
+  opacity: 60%;
+}
+
+.navigation-link:hover .plus-icon {
+  opacity: 100%;
+}
+
+.navigation-item:first-child:hover {
+  margin-bottom: 125px;
+}
+
+.navigation-item:hover .catalog-navigation-container {
+  display: flex;
+}
+
+.navigation-link:active {
+  opacity: 30%;
+}
+
+.navigation-link:active .plus-icon {
+  opacity: 100%;
+}
+
+.navigation-item:active .catalog-navigation-container {
+  display: flex;
+}
+
+.navigation-link:focus {
+  outline: 2px solid #af4fff;
+}
+
 .catalog-navigation-link:hover {
   opacity: 60%;
 }
@@ -424,30 +523,13 @@ body {
   outline: 2px solid #af4fff;
 }
 
-.plus-button:hover .catalog-navigation {
-  display: block;
-}
-
-.plus-button:hover .plus-icon {
-  opacity: 100%;
-}
-
-.plus-button:active .plus-icon {
-  opacity: 100%;
-}
-
-.plus-button:active .catalog-navigation {
-  display: block;
-}
-
-.plus-button:focus {
-  outline: 2px solid #af4fff;
+.plus-button:focus-within .catalog-navigation-container {
+  display: flex;
 }
 
 .plus-icon {
   position: absolute;
   display: block;
-  margin: auto;
   top: 0;
   right: 0;
   opacity: 30%;
@@ -571,38 +653,40 @@ body {
   margin: 0 0 70px 0;
 }
 
-.goods-wrapper {
-  position: relative;
-  width: 160px;
-  height: 160px;
-  background-color: #ffe17f;
-  margin-bottom: 32px;
+.goods-virtual-reality::before {
+  background-image: url(../images/goods/virtual-reality.svg);
   background-repeat: no-repeat;
   background-position: center;
 }
 
-.goods-item:nth-child(1) .goods-wrapper {
-  background-image: url(../images/goods/virtual-reality.svg);
-}
-
-.goods-item:nth-child(2) .goods-wrapper {
+.goods-monopod::before {
   background-image: url(../images/goods/monopod.svg);
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
-.goods-item:nth-child(3) .goods-wrapper {
+.goods-action-camera::before {
   background-image: url(../images/goods/action-camera.svg);
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
-.goods-item:nth-child(4) .goods-wrapper {
+.goods-fitness-tracker::before {
   background-image: url(../images/goods/fitness-tracker.svg);
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
-.goods-item:nth-child(5) .goods-wrapper {
+.goods-smart-watch::before {
   background-image: url(../images/goods/smart-watch.svg);
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
-.goods-item:nth-child(6) .goods-wrapper {
+.goods-quadrocopter::before {
   background-image: url(../images/goods/quadrocopter.svg);
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .goods-list {
@@ -620,6 +704,7 @@ body {
 
 .goods-link {
   display: block;
+  position: relative;
   font-family: Raleway, sans-serif;
   font-weight: 800;
   font-size: 18px;
@@ -628,6 +713,19 @@ body {
   text-decoration: none;
   letter-spacing: -0.02em;
   cursor: pointer;
+  padding-top: 192px;
+}
+
+.goods-link::before {
+  content: "";
+  display: block;
+  width: 160px;
+  height: 160px;
+  background-color: #ffe17f;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  position: absolute;
 }
 
 .goods-link:hover .goods-wrapper {
@@ -678,6 +776,7 @@ body {
   border: none;
   padding: 10px 11px;
   cursor: pointer;
+  background-color: transparent;
 }
 
 .button-current {
@@ -1137,7 +1236,6 @@ body {
 
 .footer-social-tg {
   background-image: url(../images/social-media/telegram.svg);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .footer-social-yt {
@@ -1146,7 +1244,6 @@ body {
 
 .footer-social-twitter {
   background-image: url(../images/social-media/twitter.svg);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .footer-social-item {
@@ -1213,12 +1310,12 @@ body {
   float: right;
 }
 
-.htmlacademy-link:hover .htmlacademy-logo {
-  filter: brightness(0) invert(100%);
+.htmlacademy-link:hover svg path {
+  fill: #ffffff;
 }
 
-.htmlacademy-link:active .htmlacademy-logo {
-  filter: opacity(0.3) brightness(0);
+.htmlacademy-link:active svg path {
+  fill: rgba(255, 255, 255, 0.3);
 }
 
 .htmlacademy-link:focus {
