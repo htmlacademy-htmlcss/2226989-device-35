@@ -23,7 +23,12 @@
             action="https://echo.htmlacademy.ru/"
             method="post"
           >
-            <input type="search" name="search" placeholder="Поиск по сайту" />
+            <label class="visually-hidden">Поиск</label>
+            <input
+              class="search-field"
+              type="search"
+              placeholder="Поиск по сайту"
+            />
             <button class="search-button" type="submit">Найти</button>
           </form>
           <nav class="navigation-user">
@@ -270,12 +275,14 @@
               </div>
             </li>
           </ol>
-          <button class="slider-button slider-prev" type="button">
-            <span class="visually-hidden">Предыдущее фото</span>
-          </button>
-          <button class="slider-button slider-next" type="button">
-            <span class="visually-hidden">Следующее фото</span>
-          </button>
+          <div class="slider-controls">
+            <button class="slider-button slider-prev" type="button">
+              <span class="visually-hidden">Предыдущее фото</span>
+            </button>
+            <button class="slider-button slider-next" type="button">
+              <span class="visually-hidden">Следующее фото</span>
+            </button>
+          </div>
           <ol class="slider-pagination">
             <li class="slider-pagination-item">
               <button
@@ -559,5 +566,99 @@
         </section>
       </div>
     </footer>
+
+    <div class="modal-container modal-container-close">
+      <div class="modal modal-delivery">
+        <button class="modal-close-button">
+          <span class="visually-hidden">Закрыть</span>
+        </button>
+        <section class="modal-content">
+          <h2 class="modal-title">Доставка под заказ</h2>
+          <form
+            class="delivery-form"
+            action="https://echo.htmlacademy.ru/"
+            method="post"
+          >
+            <p class="field-group">
+              <label class="delivery-form-label" for="delivery-name"
+                >Ваше имя:</label
+              >
+              <input
+                class="delivery-form-field name-field"
+                type="text"
+                id="delivery-name"
+                name="delivery-name"
+                placeholder="Введите имя"
+              />
+            </p>
+            <p class="field-group">
+              <label class="delivery-form-label" for="delivery-email"
+                >Ваш e-mail:</label
+              >
+              <input
+                class="delivery-form-field email-field"
+                type="email"
+                id="delivery-email"
+                name="delivery-email"
+                placeholder="Ваш e-mail"
+              />
+            </p>
+            <p class="field-group">
+              <label class="delivery-form-label" for="delivery-position"
+                >Что нужно привезти:</label
+              >
+              <input
+                class="delivery-form-field position-field"
+                type="text"
+                id="delivery-position"
+                name="delivery-position"
+                placeholder="В свободной форме"
+              />
+            </p>
+            <p class="field-group">
+              <span class="delivery-form-label">
+                <label class="delivery-form-label" for="delivery-number"
+                  >Количество:</label
+                ><span class="tooltip">
+                  <button
+                    class="tooltip-toggle"
+                    type="button"
+                    aria-labelledby="tooltip-label-number"
+                  ></button>
+                  <span
+                    class="tooltip-text"
+                    role="tooltip"
+                    id="tooltip-label-number"
+                    >Постараемся найти, сколько нужно. Привезём сколько
+                    получится по требованиям к провозу багажа.</span
+                  >
+                </span></span
+              >
+              <input
+                class="delivery-form-field number-field"
+                type="number"
+                id="delivery-number"
+                name="delivery-number"
+                value="1"
+              />
+
+              <button
+                class="delivery-number-button plus-number-button"
+                type="button"
+              >
+                <span class="visually-hidden">Добавить один</span>
+              </button>
+              <button
+                class="delivery-number-button minus-number-button"
+                type="button"
+              >
+                <span class="visually-hidden">Вычесть один</span>
+              </button>
+            </p>
+            <button class="button" type="submit">Отправить</button>
+          </form>
+        </section>
+      </div>
+    </div>
   </body>
 </html>
