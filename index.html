@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <title>HTML Academy: Девайс</title>
     <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="icon" href="favicon.ico" />
   </head>
   <body>
     <header class="page-header">
@@ -23,12 +24,15 @@
             action="https://echo.htmlacademy.ru/"
             method="post"
           >
-            <label class="visually-hidden">Поиск</label>
-            <input
-              class="search-field"
-              type="search"
-              placeholder="Поиск по сайту"
-            />
+            <div class="search-field-wrapper">
+              <label class="visually-hidden">Поиск</label>
+              <input
+                class="search-field"
+                type="search"
+                placeholder="Поиск по сайту"
+                required
+              />
+            </div>
             <button class="search-button" type="submit">Найти</button>
           </form>
           <nav class="navigation-user">
@@ -37,7 +41,8 @@
                 <a class="navigation-user-link icon-login" href="#"> Войти</a>
               </li>
               <li class="navigation-user-item">
-                <a class="navigation-user-link navigation-user-not-logged-in"
+                <a
+                  class="navigation-user-link navigation-user-not-logged-in visually-hidden"
                   >Выйти</a
                 >
               </li>
@@ -62,7 +67,9 @@
                           height="43"
                           alt="селфи-палка с установленным телефоном"
                         />
-                        <p class="cart-item-title">Любительская селфи-палка</p>
+                        <p class="cart-item-title">
+                          Любительская <br />селфи-палка
+                        </p>
                       </a>
                       <button class="popover-close-button">
                         <span class="visually-hidden">Закрыть</span>
@@ -86,8 +93,8 @@
                       </button>
                     </li>
                   </ul>
-                  <div class="cart-number">Товаров: 2</div>
-                  <div class="cart-sum">Сумма: 2000 ₽</div>
+                  <span class="cart-number">Товаров: 2</span>
+                  <span class="cart-sum">Сумма: 2000 ₽</span>
                   <a class="button" href="#">Открыть корзину</a>
                 </div>
               </li>
@@ -154,22 +161,17 @@
                 </ul>
               </div>
             </li>
-
-            <li class="navigation-item">
-              <a class="navigation-link" href="delivery.html"
-                ><span>Доставка</span></a
-              >
-            </li>
-            <li class="navigation-item">
-              <a class="navigation-link" href="warranty.html"
-                ><span>Гарантия</span></a
-              >
-            </li>
-            <li class="navigation-item">
-              <a class="navigation-link" href="contacts.html"
-                ><span>Контакты</span></a
-              >
-            </li>
+            <div class="main-navigation-wrapper">
+              <li class="navigation-item">
+                <a class="navigation-link" href="delivery.html">Доставка</a>
+              </li>
+              <li class="navigation-item">
+                <a class="navigation-link" href="warranty.html">Гарантия</a>
+              </li>
+              <li class="navigation-item">
+                <a class="navigation-link" href="contacts.html">Контакты</a>
+              </li>
+            </div>
           </ul>
         </nav>
       </div>
@@ -181,7 +183,8 @@
         <section class="gallery">
           <h2 class="gallery-title visually-hidden">Промо товары</h2>
           <ol class="promo-slider-cards">
-            <li class="promo-slider-item promo-slider-item-current">
+            <!--Для просмотра других слайдов необходимо убрать класс visually-hidden-->
+            <li class="promo-slider-item">
               <h3 class="promo-title visually-hidden">Квадрокоптер</h3>
               <div class="index-columns">
                 <img
@@ -214,7 +217,7 @@
               </div>
             </li>
 
-            <li class="promo-slider-item">
+            <li class="promo-slider-item visually-hidden">
               <h3 class="promo-title visually-hidden">Фитнес-браслет</h3>
               <div class="index-columns">
                 <img
@@ -225,7 +228,7 @@
                   alt="Фитнес-браслет"
                 />
                 <div class="promo-wrapper">
-                  <b class="promo-slogan">Худеем правильно!</b>
+                  <b class="promo-slogan">Худеем <br />правильно!</b>
                   <p class="promo-description">
                     Мотивирующие фитнес-браслеты помогут найти в себе силы не
                     пропускать занятия и соблюдать диету.
@@ -241,7 +244,7 @@
               </div>
             </li>
 
-            <li class="promo-slider-item">
+            <li class="promo-slider-item visually-hidden">
               <h3 class="promo-title visually-hidden">Селфи-палка</h3>
               <div class="index-columns">
                 <img
@@ -252,13 +255,16 @@
                   alt="Селфи-палка"
                 />
                 <div class="promo-wrapper">
-                  <b class="promo-slogan">Делай селфи, как Бен Стиллер! </b>
+                  <b class="promo-slogan"
+                    >Делай селфи,<br />
+                    как Бен Стиллер!
+                  </b>
                   <p class="promo-description">
                     Самая длинная палка для селфи доступна в нашем магазине.
                     Восемь (Восемь, Карл!) метров длиной и весом всего 5 кг.
                   </p>
                   <a class="button" href="#">Подробнее</a>
-                  <dl class="characteristics">
+                  <dl class="characteristics characteristics-size">
                     <div class="characteristics-wrapper">
                       <dt class="characteristics-value">8,5 м</dt>
                       <dd class="characteristics-desc">Длина палки</dd>
@@ -359,7 +365,7 @@
               </button>
             </div>
             <ul class="service-list">
-              <li class="service-item service-item-current">
+              <li class="service-item">
                 <div class="service-wrapper">
                   <h3 class="service-title">Доставка</h3>
                   <p class="service-description">
@@ -372,17 +378,17 @@
               <li class="service-item">
                 <div class="service-wrapper">
                   <h3 class="service-title">Гарантия</h3>
-                  <p class="service-description">
+                  <p class="service-description wide-description">
                     Если из-за возгорания купленного у нас товара у вас сгорит
-                    дом — не переживайте, мы выдадим вам новый. Товар, не дом,
-                    конечно же.
+                    дом — не переживайте, мы выдадим вам<br />
+                    новый. Товар, не дом, конечно же.
                   </p>
                 </div>
               </li>
-              <li class="service-item">
+              <li class="service-item service-item-current">
                 <div class="service-wrapper">
                   <h3 class="service-title">Кредит</h3>
-                  <p class="service-description">
+                  <p class="service-description wide-description">
                     Залезть в долговую яму стало проще! Кредитные консультанты
                     подберут для вас наиболее выгодные условия кредита. Выгодные
                     для банка, разумеется.
@@ -462,6 +468,7 @@
               action="https://echo.htmlacademy.ru/"
               method="post"
             >
+              <label class="visually-hidden">Ваш e-mail</label>
               <input
                 class="field"
                 placeholder="Ваш e-mail"
@@ -470,6 +477,7 @@
                 id="newsletter-email"
                 required
               />
+
               <button class="button newsletter-button" type="submit">
                 Подписаться
               </button>
@@ -494,9 +502,7 @@
             />
           </a>
           <address class="footer-contacts-address">
-            <p class="footer-adress-text">
-              Санкт-Петербург, набережная реки Карповки, 5, литера П.
-            </p>
+            Санкт-Петербург, набережная реки Карповки, 5, литера П.
           </address>
         </section>
         <div class="footer-wrapper">
@@ -538,7 +544,7 @@
               <li class="footer-social-item">
                 <a
                   class="footer-social-link footer-social-twitter"
-                  href="https://twitter.com/htmlacademy.ru"
+                  href="https://twitter.com/htmlacademy_ru"
                 >
                   <span class="visually-hidden">Твиттер</span>
                 </a>
@@ -590,6 +596,7 @@
                 id="delivery-name"
                 name="delivery-name"
                 placeholder="Введите имя"
+                required
               />
               <!--Раскомментировать при  проверке-->
               <!--<span class="wrong-input">Добавьте имя</span>-->
@@ -604,8 +611,9 @@
                 id="delivery-email"
                 name="delivery-email"
                 placeholder="Ваш e-mail"
-              /><!--Раскомментировать при  проверке-->
-              <!--<span class="wrong-input">Забавный у вас адрес</span>-->
+                required
+              />
+              <span class="wrong-input">Забавный у вас адрес</span>
             </p>
             <p class="field-group">
               <label class="delivery-form-label" for="delivery-position"
@@ -617,6 +625,7 @@
                 id="delivery-position"
                 name="delivery-position"
                 placeholder="В свободной форме"
+                required
               />
             </p>
             <p class="field-group">
@@ -634,7 +643,7 @@
                     role="tooltip"
                     id="tooltip-label-number"
                     >Постараемся найти, сколько нужно. Привезём сколько
-                    получится по требованиям к провозу багажа.</span
+                    получится по требованиям <br />к провозу багажа.</span
                   >
                 </span></span
               >
@@ -644,6 +653,7 @@
                 id="delivery-number"
                 name="delivery-number"
                 value="1"
+                required
               />
 
               <button
