@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <title>Моноподы для селфи</title>
     <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="icon" href="favicon.ico" />
   </head>
   <body>
     <header class="page-header">
@@ -23,12 +24,15 @@
             action="https://echo.htmlacademy.ru/"
             method="post"
           >
-            <label class="visually-hidden">Поиск</label>
-            <input
-              class="search-field"
-              type="search"
-              placeholder="Поиск по сайту"
-            />
+            <div class="search-field-wrapper">
+              <label class="visually-hidden">Поиск</label>
+              <input
+                class="search-field"
+                type="search"
+                placeholder="Поиск по сайту"
+                required
+              />
+            </div>
             <button class="search-button" type="submit">Найти</button>
           </form>
           <nav class="navigation-user">
@@ -53,7 +57,6 @@
               <li class="navigation-user-item">
                 <a class="navigation-user-link icon-basket" href="#">
                   <span class="cart-summary">2</span>
-
                   Корзина
                 </a>
                 <div class="popover-content">
@@ -67,7 +70,9 @@
                           height="43"
                           alt="селфи-палка с установленным телефоном"
                         />
-                        <p class="cart-item-title">Любительская селфи-палка</p>
+                        <p class="cart-item-title">
+                          Любительская <br />селфи-палка
+                        </p>
                       </a>
                       <button class="popover-close-button">
                         <span class="visually-hidden">Закрыть</span>
@@ -91,8 +96,8 @@
                       </button>
                     </li>
                   </ul>
-                  <div class="cart-number">Товаров: 2</div>
-                  <div class="cart-sum">Сумма: 2000 ₽</div>
+                  <span class="cart-number">Товаров: 2</span>
+                  <span class="cart-sum">Сумма: 2000 ₽</span>
                   <a class="button" href="#">Открыть корзину</a>
                 </div>
               </li>
@@ -103,25 +108,24 @@
           <ul class="navigation-list">
             <li class="navigation-item">
               <a class="navigation-link plus-button" href="#">
-                Каталог товаров<svg
+                Каталог товаров
+
+                <svg
                   class="plus-icon"
                   aria-hidden="true"
                   focusable="false"
-                  xmlns="http://www.w3.org/2000/svg"
                   width="50"
                   height="51"
+                  viewBox="0 0 50 51"
                   fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
                   <circle
                     cx="25"
-                    cy="25.79"
+                    cy="25.787"
                     r="24"
-                    stroke="#000"
+                    stroke="black"
                     stroke-width="2"
-                  />
-                  <path
-                    d="M33 24.79h-7v-7h-2v7h-7v2h7v7h2v-7h7v-2Z"
-                    fill="#000"
                   />
                 </svg>
               </a>
@@ -160,22 +164,17 @@
                 </ul>
               </div>
             </li>
-
-            <li class="navigation-item">
-              <a class="navigation-link" href="delivery.html"
-                ><span>Доставка</span></a
-              >
-            </li>
-            <li class="navigation-item">
-              <a class="navigation-link" href="warranty.html"
-                ><span>Гарантия</span></a
-              >
-            </li>
-            <li class="navigation-item">
-              <a class="navigation-link" href="contacts.html"
-                ><span>Контакты</span></a
-              >
-            </li>
+            <div class="main-navigation-wrapper">
+              <li class="navigation-item">
+                <a class="navigation-link" href="delivery.html">Доставка</a>
+              </li>
+              <li class="navigation-item">
+                <a class="navigation-link" href="warranty.html">Гарантия</a>
+              </li>
+              <li class="navigation-item">
+                <a class="navigation-link" href="contacts.html">Контакты</a>
+              </li>
+            </div>
           </ul>
         </nav>
       </div>
@@ -383,10 +382,12 @@
                         alt="селфи-палка с установленным телефоном"
                       />
                       <span class="hidden-button">Подробнее</span>
+                      <span class="new">New</span>
                     </div>
                     <div class="product-card-info">
                       <h3 class="product-card-title">
-                        Любительская селфи-палка
+                        Любительская<br />
+                        селфи-палка
                       </h3>
                       <b class="product-card-price">500 ₽</b>
                     </div>
@@ -403,6 +404,7 @@
                         alt="селфи-палка с креплением для профессиональной техники"
                       />
                       <span class="hidden-button">Подробнее</span>
+                      <span class="new">New</span>
                     </div>
                     <div class="product-card-info">
                       <h3 class="product-card-title">
@@ -423,11 +425,12 @@
                         alt="селфи-палка из непотопляемого материала желтого цвета с установленной экшн-камерой"
                       />
                       <span class="hidden-button">Подробнее</span>
+                      <span class="new">New</span>
                     </div>
 
                     <div class="product-card-info">
                       <h3 class="product-card-title">
-                        Непотопляемая селфи-палка
+                        Непотопляемая <br />селфи-палка
                       </h3>
                       <b class="product-card-price">2500 ₽</b>
                     </div>
@@ -444,10 +447,11 @@
                         alt="селфи-палка в виде руки человека"
                       />
                       <span class="hidden-button">Подробнее</span>
+                      <span class="new">New</span>
                     </div>
                     <div class="product-card-info">
                       <h3 class="product-card-title">
-                        Селфи-палка «Следуй за мной»
+                        Селфи-палка «Следуй <br />за мной»
                       </h3>
                       <b class="product-card-price">1500 ₽</b>
                     </div>
@@ -543,7 +547,7 @@
               <li class="footer-social-item">
                 <a
                   class="footer-social-link footer-social-twitter"
-                  href="https://twitter.com/htmlacademy.ru"
+                  href="https://twitter.com/htmlacademy_ru"
                 >
                   <span class="visually-hidden">Твиттер</span>
                 </a>
@@ -554,7 +558,7 @@
         <section class="footer-phone">
           <h2 class="visually-hidden">Контакты</h2>
           <a class="footer-contacts-address-phone" href="tel:+78128121212"
-            >+7 (812) 812-12-12</a
+            >Тел.: +7 (812) 812-12-12</a
           >
           <a class="htmlacademy-link" href="https://htmlacademy.ru/">
             <img
